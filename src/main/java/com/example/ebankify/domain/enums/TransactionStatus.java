@@ -1,4 +1,4 @@
-package com.example.ebankify.domain.entities.enums;
+package com.example.ebankify.domain.enums;
 
 public enum TransactionStatus {
     PENDING,

@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import com.example.ebankify.domain.enums.Role;
 
 @Data
 @Entity
@@ -14,7 +15,13 @@ import lombok.NoArgsConstructor;
 @Builder
 public class User {
     @Id
-    @GeneratedValue
-    
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private int age;
+    private String email;
+    private String password;
+    private double monthlyIncome;
+    private int creditScore;
+    private Role role;
 }
