@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: yourname
+      changes:
+        - createTable:
+            tableName: invoices
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: amount_due
+                  type: DECIMAL(10,2)
+              - column:
+                  name: due_date
+                  type: DATE
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: invoices
+            baseColumnNames: user_id
+            referencedTableName: users
+            referencedColumnNames: id

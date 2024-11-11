@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 9
+      author: yourname
+      changes:
+        - createTable:
+            tableName: transaction_type
+            columns:
+              - column:
+                  name: type_name
+                  type: VARCHAR(255)
+                  constraints:
+                    primaryKey: true
+        - insert:
+            tableName: transaction_type
+            columns:
+              - column:
+                  name: type_name
+                  value: "STANDARD"
+        - insert:
+            tableName: transaction_type
+            columns:
+              - column:
+                  name: type_name
+                  value: "INSTANT"

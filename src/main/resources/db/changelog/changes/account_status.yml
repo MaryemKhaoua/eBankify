@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 6
+      author: yourname
+      changes:
+        - createTable:
+            tableName: account_status
+            columns:
+              - column:
+                  name: status
+                  type: VARCHAR(255)
+                  constraints:
+                    primaryKey: true
+        - insert:
+            tableName: account_status
+            columns:
+              - column:
+                  name: status
+                  value: "ACTIVE"
+              - column:
+                  name: status
+                  value: "BLOCKED"

@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: 7
+      author: yourname
+      changes:
+        - createTable:
+            tableName: role
+            columns:
+              - column:
+                  name: role_name
+                  type: VARCHAR(255)
+                  constraints:
+                    primaryKey: true
+        - insert:
+            tableName: role
+            columns:
+              - column:
+                  name: role_name
+                  value: "ADMIN"
+        - insert:
+            tableName: role
+            columns:
+              - column:
+                  name: role_name
+                  value: "USER"
+        - insert:
+            tableName: role
+            columns:
+              - column:
+                  name: role_name
+                  value: "EMPLOYEE"

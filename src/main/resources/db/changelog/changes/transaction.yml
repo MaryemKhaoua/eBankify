@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5
+      author: yourname
+      changes:
+        - createTable:
+            tableName: transactions
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: type
+                  type: VARCHAR(255)
+              - column:
+                  name: amount
+                  type: DECIMAL(10,2)
+              - column:
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  name: source_account_id
+                  type: BIGINT
+              - column:
+                  name: destination_account_id
+                  type: BIGINT
+        - addForeignKeyConstraint:
+            baseTableName: transactions
+            baseColumnNames: source_account_id
+            referencedTableName: accounts
+            referencedColumnNames: id
+        - addForeignKeyConstraint:
+            baseTableName: transactions
+            baseColumnNames: destination_account_id
+            referencedTableName: accounts
+            referencedColumnNames: id
